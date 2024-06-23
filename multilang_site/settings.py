@@ -1,15 +1,19 @@
 # settings.py
 
+import os
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-pt0u=bgj@ka1ftznz&v0n5gw5m8_#1v8m650nsk6d)66337$&e'
+from dotenv import load_dotenv
 
-DEBUG = True
+# Charger les variables d'environnement du fichier .env
+load_dotenv()
 
-ALLOWED_HOSTS = []
+SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -77,7 +81,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGES = [
     ('en', _('English')),
     ('fr', _('French')),
-    ('es', _('Spanish'))
+    ('es', _('Spanish')),  # Ajout de l'espagnol
 ]
 
 LOCALE_PATHS = [
@@ -87,19 +91,18 @@ LOCALE_PATHS = [
 LANGUAGE_CODE = 'en'
 
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 HAYSTACK_CONNECTIONS = {
     'default': {
         'ENGINE': 'haystack.backends.simple_backend.SimpleEngine',
     },
 }
 
-OPENAI_API_KEY = 'sk-proj-GG3BwnAA6EJgzxkqgFmsT3BlbkFJDrh9wS6NBZaYi5gTMcrh'
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# Utilisation de la clé API OpenAI à partir des variables d'environnement
+OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
