@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-23 17:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: models.py:7
+#, fuzzy
+#| msgid "Title"
+msgid "title"
+msgstr "Titre"
+
+#: models.py:8
+#, fuzzy
+#| msgid "Content"
+msgid "content"
+msgstr "Contenu"
+
+#: templates/main/add_article.html:7
+msgid "Add New Article"
+msgstr "Ajouter un nouvel article"
+
+#: templates/main/add_article.html:11 templates/main/add_article.html:46
+#: templates/main/add_article.html:53
+msgid "Title"
+msgstr "Titre"
+
+#: templates/main/add_article.html:15 templates/main/add_article.html:58
+#: templates/main/add_article.html:65
+msgid "Content"
+msgstr "Contenu"
+
+#: templates/main/add_article.html:18
+msgid "Save"
+msgstr "Enregistrer"
+
+#: templates/main/add_article.html:95
+msgid "There was an error adding the article."
+msgstr ""
+
+#: templates/main/article_liste.html:4
+#, fuzzy
+#| msgid "Add Article"
+msgid "Article List"
+msgstr "Ajouter article"
+
+#: templates/main/article_liste.html:8
+#, fuzzy
+#| msgid "Add Article"
+msgid "Articles"
+msgstr "Articles"
+
+#: templates/main/article_liste.html:17
+msgid "Delete"
+msgstr "Supprimer"
+
+#: templates/main/base.html:7 templates/main/base.html:76
+msgid "My Blog"
+msgstr "Mon Blog"
+
+#: templates/main/base.html:83
+msgid "Home"
+msgstr "Acceuil"
+
+#: templates/main/base.html:86
+msgid "Add Article"
+msgstr "Ajouter article"
+
+#: templates/main/base.html:89
+msgid "Language"
+msgstr "Langage"
+
+#: templates/main/base.html:103
+msgid "Select a Language"
+msgstr "Selectionner un langage"
+
+#: templates/main/base.html:111
+msgid "English"
+msgstr "Anglais"
+
+#: templates/main/base.html:114
+msgid "French"
+msgstr "Français"
+
+#: templates/main/base.html:117
+msgid "Spanish"
+msgstr ""
+
+#~ msgid "Publication Date"
+#~ msgstr "Date de publication"

@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1>Search Results</h1>
+    {% if query %}
+        <p>Results for: <strong>{{ query }}</strong></p>
+        <ul>
+        {% for result in results %}
+            <li><a href="{% url 'article_detail' result.object.pk %}">{{ result.object.title }}</a></li>
+        {% empty %}
+            <p>No results found.</p>
+        {% endfor %}
+        </ul>
+        {% if gpt_summary %}
+            <h2>AI Summary</h2>
+            <p>{{ gpt_summary }}</p>
+        {% endif %}
+    {% else %}
+        <p>Please enter a search query.</p>
+    {% endif %}
+</div>
+{% endblock %}

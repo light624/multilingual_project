@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-23 17:15+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+
+#: models.py:7
+msgid "title"
+msgstr "titulo"
+
+#: models.py:8
+msgid "content"
+msgstr "contenido"
+
+#: templates/main/add_article.html:7
+msgid "Add New Article"
+msgstr "Añadir nuevo artículo"
+
+#: templates/main/add_article.html:11 templates/main/add_article.html:46
+#: templates/main/add_article.html:53
+msgid "Title"
+msgstr "Título"
+
+#: templates/main/add_article.html:15 templates/main/add_article.html:58
+#: templates/main/add_article.html:65
+msgid "Content"
+msgstr "Contenido"
+
+#: templates/main/add_article.html:18
+msgid "Save"
+msgstr "Guardar"
+
+#: templates/main/add_article.html:95
+msgid "There was an error adding the article."
+msgstr "Se ha producido un error al añadir el artículo."
+
+#: templates/main/article_liste.html:4
+#, fuzzy
+#| msgid "Add Article"
+msgid "Article List"
+msgstr "Añadir artículo"
+
+#: templates/main/article_liste.html:8
+#, fuzzy
+#| msgid "Add Article"
+msgid "Articles"
+msgstr "Artículos"
+
+#: templates/main/article_liste.html:17
+msgid "Delete"
+msgstr "Borrar"
+
+#: templates/main/base.html:7 templates/main/base.html:76
+msgid "My Blog"
+msgstr "Mi blog"
+
+#: templates/main/base.html:83
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/main/base.html:86
+msgid "Add Article"
+msgstr "Añadir artículo"
+
+#: templates/main/base.html:89
+msgid "Language"
+msgstr "Idioma"
+
+#: templates/main/base.html:103
+msgid "Select a Language"
+msgstr "Seleccione un idioma"
+
+#: templates/main/base.html:111
+msgid "English"
+msgstr "En inglés"
+
+#: templates/main/base.html:114
+msgid "French"
+msgstr "Francés"
+
+#: templates/main/base.html:117
+msgid "Spanish"
+msgstr "Español"
+
+
+
+

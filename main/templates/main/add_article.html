@@ -1,0 +1,104 @@
+{% extends 'main/base.html' %}
+{% load i18n %}
+{% block title %}Add Article{% endblock %}
+
+{% block content %}
+
+<h1 class="animate__animated animate__fadeInDown">{% trans "Add New Article" %}</h1>
+<form id="articleForm" method="post" class="mt-4">
+    {% csrf_token %}
+    <div class="form-floating animate__animated animate__fadeInLeft">
+        <input type="text" class="form-control" id="id_title" name="title" placeholder="{% trans 'Title' %}">
+        <label for="id_title"></label>
+    </div>
+    <div class="form-floating animate__animated animate__fadeInRight">
+        <textarea class="form-control" id="id_content" name="content" placeholder="{% trans 'Content' %}" rows="3"></textarea>
+        <label for="id_content"></label>
+    </div>
+    <button type="submit" class="btn btn-primary animate__animated animate__fadeInUp" id="saveButton">{% trans "Save" %}</button>
+</form>
+<div id="message" class="mt-3"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    const titleInput = document.getElementById('id_title');
+    const contentInput = document.getElementById('id_content');
+
+    const adjustWidth = (input) => {
+        input.style.width = 'auto';
+        input.style.width = (input.scrollWidth + 2) + 'px';
+    };
+
+    const adjustHeight = (textarea) => {
+        textarea.style.height = 'auto';
+        textarea.style.height = (textarea.scrollHeight + 2) + 'px';
+    };
+
+    titleInput.addEventListener('input', function() {
+        adjustWidth(this);
+    });
+
+    contentInput.addEventListener('input', function() {
+        adjustHeight(this);
+    });
+
+    titleInput.addEventListener('focus', function() {
+        if (this.placeholder === '{% trans "Title" %}') {
+            this.placeholder = '';
+        }
+    });
+
+    titleInput.addEventListener('blur', function() {
+        if (this.value === '') {
+            this.placeholder = '{% trans "Title" %}';
+        }
+    });
+
+    contentInput.addEventListener('focus', function() {
+        if (this.placeholder === '{% trans "Content" %}') {
+            this.placeholder = '';
+        }
+    });
+
+    contentInput.addEventListener('blur', function() {
+        if (this.value === '') {
+            this.placeholder = '{% trans "Content" %}';
+        }
+    });
+
+    // Initialize the width and height based on content
+    adjustWidth(titleInput);
+    adjustHeight(contentInput);
+});
+
+document.getElementById('articleForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    const saveButton = document.getElementById('saveButton'); // Correct reference to the Save button
+    saveButton.disabled = true; // Disable the save button
+
+    fetch('{% url "add_article" %}', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Redirect to the article list page
+            window.location.href = "{% url 'article_list' %}";
+        } else {
+            saveButton.disabled = false; // Re-enable the save button
+            let message = document.getElementById('message');
+            message.innerHTML = '<div class="alert alert-danger">{% trans "There was an error adding the article." %}</div>';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        saveButton.disabled = false; // Re-enable the save button
+    });
+});
+</script>
+{% endblock %}

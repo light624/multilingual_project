@@ -1,0 +1,23 @@
+{% extends 'main/base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Article List" %}{% endblock %}
+
+{% block content %}
+
+<h1 class="animate__animated animate__fadeInDown">{% trans "Articles" %}</h1>
+<div class="card-columns">
+    {% for article in articles %}
+    <div class="card animate__animated animate__fadeInUp">
+        <div class="card-body">
+            <h5 class="card-title">{{ article.title }}</h5>
+            <p class="card-text">{{ article.content|slice:":200" }}{% if article.content|length > 200 %}...{% endif %}</p>
+            <p class="card-text"><small class="text-muted">{{ article.publication_date }}</small></p>
+            <a href="{% url 'delete_article' article.pk %}" class="btn btn-danger btn-sm">
+                <i class="fas fa-trash-alt"></i> {% trans "Delete" %}
+            </a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
