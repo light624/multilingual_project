@@ -4,4 +4,4 @@ dj-database-url
 python-dotenv
 requests
 openai
-haystack
+django-haystack==3.1.1
