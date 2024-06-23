@@ -8,7 +8,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 from dotenv import load_dotenv
 
-# Charger les variables d'environnement du fichier .env
 load_dotenv()
 
 SECRET_KEY = os.getenv('SECRET_KEY', 'default-secret-key')
@@ -81,7 +80,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGES = [
     ('en', _('English')),
     ('fr', _('French')),
-    ('es', _('Spanish')),  # Ajout de l'espagnol
+    ('es', _('Spanish')), 
 ]
 
 LOCALE_PATHS = [
@@ -104,5 +103,4 @@ HAYSTACK_CONNECTIONS = {
     },
 }
 
-# Utilisation de la clé API OpenAI à partir des variables d'environnement
 OPENAI_API_KEY = os.getenv('OPENAI_API_KEY')
