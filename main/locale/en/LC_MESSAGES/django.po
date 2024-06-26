@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-23 17:15+0200\n"
+"POT-Creation-Date: 2024-06-26 12:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,11 +18,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: models.py:7
+#: models.py:21
 msgid "title"
 msgstr ""
 
-#: models.py:8
+#: models.py:22
 msgid "content"
 msgstr ""
 
@@ -30,21 +30,21 @@ msgstr ""
 msgid "Add New Article"
 msgstr ""
 
-#: templates/main/add_article.html:11 templates/main/add_article.html:46
-#: templates/main/add_article.html:53
+#: templates/main/add_article.html:11 templates/main/add_article.html:48
+#: templates/main/add_article.html:55
 msgid "Title"
 msgstr ""
 
-#: templates/main/add_article.html:15 templates/main/add_article.html:58
-#: templates/main/add_article.html:65
+#: templates/main/add_article.html:15 templates/main/add_article.html:60
+#: templates/main/add_article.html:67
 msgid "Content"
 msgstr ""
 
-#: templates/main/add_article.html:18
+#: templates/main/add_article.html:20
 msgid "Save"
 msgstr ""
 
-#: templates/main/add_article.html:95
+#: templates/main/add_article.html:97
 msgid "There was an error adding the article."
 msgstr ""
 
@@ -60,34 +60,71 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: templates/main/base.html:7 templates/main/base.html:76
+#: templates/main/base.html:7 templates/main/base.html:116
 msgid "My Blog"
 msgstr ""
 
-#: templates/main/base.html:83
+#: templates/main/base.html:123
 msgid "Home"
 msgstr ""
 
-#: templates/main/base.html:86
+#: templates/main/base.html:126
 msgid "Add Article"
 msgstr ""
 
-#: templates/main/base.html:89
+#: templates/main/base.html:129
+msgid "Chatbot"
+msgstr ""
+
+#: templates/main/base.html:132 templates/main/search_results.html:11
+#: templates/main/search_results.html:14
+msgid "Search"
+msgstr ""
+
+#: templates/main/base.html:135
 msgid "Language"
 msgstr ""
 
-#: templates/main/base.html:103
+#: templates/main/base.html:149
 msgid "Select a Language"
 msgstr ""
 
-#: templates/main/base.html:111
+#: templates/main/base.html:157
 msgid "English"
 msgstr ""
 
-#: templates/main/base.html:114
+#: templates/main/base.html:160
 msgid "French"
 msgstr ""
 
-#: templates/main/base.html:117
+#: templates/main/base.html:163
 msgid "Spanish"
+msgstr ""
+
+#: templates/main/base.html:166
+msgid "German"
+msgstr ""
+
+#: templates/main/chatbot.html:13
+msgid "Send"
+msgstr ""
+
+#: templates/main/search_results.html:8
+msgid "Search Results"
+msgstr ""
+
+#: templates/main/search_results.html:21
+msgid "Results for"
+msgstr ""
+
+#: templates/main/search_results.html:29
+msgid "Answer"
+msgstr ""
+
+#: templates/main/search_results.html:31
+msgid "Relevance score"
+msgstr ""
+
+#: templates/main/search_results.html:38
+msgid "No results found."
 msgstr ""

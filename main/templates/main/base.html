@@ -14,11 +14,20 @@
         }
         .card {
             margin-bottom: 1.5rem;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
         }
         .card:hover {
             transform: scale(1.05);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            background-color: #f8f9fa;
+        }
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .card-text {
+            font-size: 1rem;
+            color: #343a40;
         }
         .navbar {
             transition: background-color 0.3s ease-in-out;
@@ -68,6 +77,37 @@
             background-color: #0056b3;
             transform: scale(1.05);
         }
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-item .nav-link {
+            font-size: 1.2rem;
+        }
+        .container h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+        }
+        .input-group .form-control {
+            border-radius: 0.25rem;
+        }
+        .input-group .btn {
+            border-radius: 0.25rem;
+        }
+        /* Additional styles for card hover effects */
+        .card:hover .card-title {
+            color: #007bff;
+        }
+        .card:hover .card-text {
+            color: #0056b3;
+        }
+        .card-body {
+            transition: background-color 0.3s ease-in-out;
+        }
+        .card:hover .card-body {
+            background-color: #f8f9fa;
+        }
     </style>
 </head>
 <body>
@@ -84,6 +124,12 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'add_article' %}">{% trans "Add Article" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'chatbot' %}">{% trans "Chatbot" %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'search' %}">{% trans "Search" %}</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#languageModal">{% trans "Language" %}</a>
@@ -115,6 +161,9 @@
                         </li>
                         <li class="list-group-item">
                             <a href="{% url 'change_language' 'es' %}" class="d-block">{% trans "Spanish" %}</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="{% url 'change_language' 'de' %}" class="d-block">{% trans "German" %}</a>
                         </li>
                     </ul>
                 </div>

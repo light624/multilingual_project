@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-26 12:40+0200\n"
+"POT-Creation-Date: 2024-06-26 12:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,126 +16,114 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: models.py:21
-#, fuzzy
-#| msgid "Title"
 msgid "title"
-msgstr "Titre"
+msgstr "Titel"
 
 #: models.py:22
-#, fuzzy
-#| msgid "Content"
 msgid "content"
-msgstr "Contenu"
+msgstr "Inhalt"
 
 #: templates/main/add_article.html:7
 msgid "Add New Article"
-msgstr "Ajouter un nouvel article"
+msgstr "Neuen Artikel anlegen"
 
 #: templates/main/add_article.html:11 templates/main/add_article.html:48
 #: templates/main/add_article.html:55
 msgid "Title"
-msgstr "Titre"
+msgstr "Titel"
 
 #: templates/main/add_article.html:15 templates/main/add_article.html:60
 #: templates/main/add_article.html:67
 msgid "Content"
-msgstr "Contenu"
+msgstr "Inhalt"
 
 #: templates/main/add_article.html:20
 msgid "Save"
-msgstr "Enregistrer"
+msgstr "Speichern"
 
 #: templates/main/add_article.html:97
 msgid "There was an error adding the article."
-msgstr ""
+msgstr "Es ist ein Fehler beim Hinzufügen des Artikels aufgetreten."
 
 #: templates/main/article_liste.html:4
-#, fuzzy
-#| msgid "Add Article"
 msgid "Article List"
-msgstr "Ajouter article"
+msgstr "Artikel Liste"
 
 #: templates/main/article_liste.html:8
-#, fuzzy
-#| msgid "Add Article"
 msgid "Articles"
-msgstr "Articles"
+msgstr "Artikel"
 
 #: templates/main/article_liste.html:17
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "Löschen"
 
 #: templates/main/base.html:7 templates/main/base.html:116
 msgid "My Blog"
-msgstr "Mon Blog"
+msgstr "Mein Blog"
 
 #: templates/main/base.html:123
 msgid "Home"
-msgstr "Acceuil"
+msgstr "Heim"
 
 #: templates/main/base.html:126
 msgid "Add Article"
-msgstr "Ajouter article"
+msgstr "Artikel anfügen"
 
 #: templates/main/base.html:129
 msgid "Chatbot"
-msgstr "Chatbot"
+msgstr "Chatbot: ."
 
 #: templates/main/base.html:132 templates/main/search_results.html:11
 #: templates/main/search_results.html:14
 msgid "Search"
-msgstr ""
+msgstr "Suche"
 
 #: templates/main/base.html:135
 msgid "Language"
-msgstr "Langage"
+msgstr "Sprache"
 
 #: templates/main/base.html:149
 msgid "Select a Language"
-msgstr "Selectionner un langage"
+msgstr "Eine Sprache wählen"
 
 #: templates/main/base.html:157
 msgid "English"
-msgstr "Anglais"
+msgstr "Deutsch"
 
 #: templates/main/base.html:160
 msgid "French"
-msgstr "Français"
+msgstr "Französisch"
 
 #: templates/main/base.html:163
 msgid "Spanish"
-msgstr "Espagnol"
+msgstr "Spanisch"
 
 #: templates/main/base.html:166
 msgid "German"
-msgstr ""
+msgstr "Deutsche."
 
 #: templates/main/chatbot.html:13
 msgid "Send"
-msgstr "Envoyer"
+msgstr "Senden"
 
 #: templates/main/search_results.html:8
 msgid "Search Results"
-msgstr "Recherche résultats"
+msgstr "Suchresultate"
 
 #: templates/main/search_results.html:21
 msgid "Results for"
-msgstr "Résultats pour"
+msgstr "Resultate für"
 
 #: templates/main/search_results.html:29
 msgid "Answer"
-msgstr "Réponse"
+msgstr "Antwort"
 
 #: templates/main/search_results.html:31
 msgid "Relevance score"
-msgstr "Score de pertinence"
+msgstr "Relevanz-Punktzahl"
 
 #: templates/main/search_results.html:38
 msgid "No results found."
-msgstr "Aucun résultat trouvé"
-
-#~ msgid "Publication Date"
-#~ msgstr "Date de publication"
+msgstr "Keine Resultate gefunden."

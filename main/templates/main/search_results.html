@@ -1,23 +1,42 @@
 {% extends 'main/base.html' %}
+{% load i18n %}
+
+{% block title %}Search Results{% endblock %}
 
 {% block content %}
 <div class="container mt-4">
-    <h1>Search Results</h1>
+    <h1 class="text-center mb-4">{% trans "Search Results" %}</h1>
+    <form method="get" action="{% url 'search' %}" class="mb-5">
+        <div class="input-group">
+            <input type="text" name="query" class="form-control" placeholder="{% trans 'Search' %}">
+            <div class="input-group-append">
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-search"></i> {% trans "Search" %}
+                </button>
+            </div>
+        </div>
+    </form>
+
     {% if query %}
-        <p>Results for: <strong>{{ query }}</strong></p>
-        <ul>
-        {% for result in results %}
-            <li><a href="{% url 'article_detail' result.object.pk %}">{{ result.object.title }}</a></li>
-        {% empty %}
-            <p>No results found.</p>
-        {% endfor %}
-        </ul>
-        {% if gpt_summary %}
-            <h2>AI Summary</h2>
-            <p>{{ gpt_summary }}</p>
+        <h2 class="text-center mb-4">{% trans "Results for" %} "{{ query }}":</h2>
+        {% if results %}
+            <div class="card-columns">
+                {% for article, answer, score in results %}
+                    <div class="card shadow-sm animate__animated animate__fadeInUp">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.title }}</h5>
+                            <p class="card-text">{{ article.content|truncatewords:50 }}</p>
+                            <p class="card-text"><strong>{% trans "Answer" %}:</strong> {{ answer }}</p>
+                            <p class="card-text">
+                                <small class="text-muted"><i class="fas fa-star"></i> {% trans "Relevance score" %}: {{ score|floatformat:2 }}</small>
+                            </p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="text-center text-muted">{% trans "No results found." %}</p>
         {% endif %}
-    {% else %}
-        <p>Please enter a search query.</p>
     {% endif %}
 </div>
 {% endblock %}

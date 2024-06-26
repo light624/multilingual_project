@@ -1,5 +1,5 @@
 {% extends 'main/base.html' %}
-
+{% load i18n %}
 {% block content %}
 <div class="container mt-4">
     <h1>Chatbot</h1>
@@ -9,7 +9,9 @@
             <div class="input-group">
                 <input type="text" id="question" class="form-control" placeholder="Ask a question...">
                 <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit">Send</button>
+                    <button class="btn btn-primary" type="submit">
+                        <i class="fas fa-paper-plane"></i> {% trans "Send" %}
+                    </button> 
                 </div>
             </div>
         </form>
