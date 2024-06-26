@@ -9,106 +9,105 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        .card-columns {
-            column-count: 3;
-        }
-        .card {
-            margin-bottom: 1.5rem;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-        }
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            background-color: #f8f9fa;
-        }
-        .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .card-text {
-            font-size: 1rem;
-            color: #343a40;
-        }
-        .navbar {
-            transition: background-color 0.3s ease-in-out;
-        }
-        .navbar:hover {
-            background-color: #0056b3;
-        }
-        .form-group {
-            position: relative;
-            margin-bottom: 1.5rem;
-        }
-        .form-control {
-            transition: all 0.3s ease-in-out;
-            border: 2px solid transparent;
-            box-shadow: none;
-        }
-        .form-control:focus {
-            border-color: #007bff;
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
-            transform: scale(1.05);
-        }
-        .form-label {
-            position: absolute;
-            top: 0;
-            left: 0;
-            padding: 0 0.5rem;
-            pointer-events: none;
-            transition: all 0.3s ease-in-out;
-            font-size: 1rem;
-            color: #6c757d;
-        }
-        .form-control:focus + .form-label,
-        .form-control:not(:placeholder-shown) + .form-label {
-            top: -1.5rem;
-            left: 0.5rem;
-            background: white;
-            font-size: 0.85rem;
-            color: #007bff;
-        }
-        .form-control:focus + .form-label {
-            color: #007bff;
-        }
-        .btn-primary {
-            transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-        .btn-primary:hover {
-            background-color: #0056b3;
-            transform: scale(1.05);
-        }
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        .navbar-nav .nav-item .nav-link {
-            font-size: 1.2rem;
-        }
-        .container h1 {
-            font-size: 2.5rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-        }
-        .input-group .form-control {
-            border-radius: 0.25rem;
-        }
-        .input-group .btn {
-            border-radius: 0.25rem;
-        }
-        /* Additional styles for card hover effects */
-        .card:hover .card-title {
-            color: #007bff;
-        }
-        .card:hover .card-text {
-            color: #0056b3;
-        }
-        .card-body {
-            transition: background-color 0.3s ease-in-out;
-        }
-        .card:hover .card-body {
-            background-color: #f8f9fa;
-        }
-    </style>
+    .card-columns {
+        column-count: 3;
+    }
+    .card {
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .card-text {
+        font-size: 1rem;
+        color: #343a40;
+    }
+    .navbar {
+        transition: background-color 0.3s ease-in-out;
+    }
+    .navbar:hover {
+        background-color: #0056b3;
+    }
+    .form-group {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+    .form-control {
+        transition: all 0.3s ease-in-out;
+        border: 2px solid transparent;
+        box-shadow: none;
+    }
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+        transform: scale(1.05);
+    }
+    .form-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 0.5rem;
+        pointer-events: none;
+        transition: all 0.3s ease-in-out;
+        font-size: 1rem;
+        color: #6c757d;
+    }
+    .form-control:focus + .form-label,
+    .form-control:not(:placeholder-shown) + .form-label {
+        top: -1.5rem;
+        left: 0.5rem;
+        background: white;
+        font-size: 0.85rem;
+        color: #007bff;
+    }
+    .form-control:focus + .form-label {
+        color: #007bff;
+    }
+    .btn-primary {
+        transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    .btn-primary:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+    .navbar-brand {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    .navbar-nav .nav-item .nav-link {
+        font-size: 1.2rem;
+    }
+    .container h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+    }
+    .input-group .form-control {
+        border-radius: 0.25rem;
+    }
+    .input-group .btn {
+        border-radius: 0.25rem;
+    }
+    /* Additional styles for card hover effects */
+    .card:hover .card-title {
+        color: #007bff;
+    }
+    .card:hover .card-text {
+        color: #0056b3;
+    }
+    .card-body {
+        transition: background-color 0.3s ease-in-out;
+    }
+    .card:hover .card-body {
+        background-color: #f8f9fa;
+    }
+</style>
 </head>
 <body>
    

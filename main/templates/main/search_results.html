@@ -18,25 +18,27 @@
     </form>
 
     {% if query %}
-        <h2 class="text-center mb-4">{% trans "Results for" %} "{{ query }}":</h2>
-        {% if results %}
-            <div class="card-columns">
-                {% for article, answer, score in results %}
-                    <div class="card shadow-sm animate__animated animate__fadeInUp">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ article.title }}</h5>
-                            <p class="card-text">{{ article.content|truncatewords:50 }}</p>
-                            <p class="card-text"><strong>{% trans "Answer" %}:</strong> {{ answer }}</p>
-                            <p class="card-text">
-                                <small class="text-muted"><i class="fas fa-star"></i> {% trans "Relevance score" %}: {{ score|floatformat:2 }}</small>
-                            </p>
-                        </div>
+    <h2 class="text-center mb-4">{% trans "Results for" %} "{{ query }}":</h2>
+    {% if results %}
+        <div class="card-columns">
+            {% for article, answer, score in results %}
+                <div class="card shadow-sm animate__animated animate__fadeInUp">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ article.title }}</h5>
+                        <p class="card-text">{{ article.content|truncatewords:50 }}</p>
+                        <p class="card-text"><strong>{% trans "Answer" %}:</strong> {{ answer }}</p>
+                        <p class="card-text">
+                            <small class="text-muted"><i class="fas fa-star"></i> {% trans "Relevance score" %}: {{ score|floatformat:2 }}</small>
+                        </p>
                     </div>
-                {% endfor %}
-            </div>
-        {% else %}
-            <p class="text-center text-muted">{% trans "No results found." %}</p>
-        {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-warning text-center animate__animated animate__fadeInUp" role="alert">
+            <i class="fas fa-exclamation-circle"></i> {% trans "No results found." %}
+        </div>
     {% endif %}
+{% endif %}
 </div>
 {% endblock %}

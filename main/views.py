@@ -2,9 +2,10 @@ from django.shortcuts import render, redirect
 from openai import OpenAI
 from .models import Article
 from .models import QAPair,find_best_answer
-from .forms import SearchForm
+from .forms import SearchForm,ArticleForm
 from django.http import JsonResponse
 from django.utils import translation
+from django.db.models import Q
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 from transformers import pipeline
@@ -25,7 +26,6 @@ def chatbot(request):
     
 
 
-
 def search(request):
     query = None
     results = []
@@ -33,25 +33,27 @@ def search(request):
         form = SearchForm(request.GET)
         if form.is_valid():
             query = form.cleaned_data['query']
-            articles = Article.objects.all()
-            
-            # Concatenate content for context
-            context = " ".join([article.content for article in articles])
+            # Initial filtering using Django ORM
+            articles = Article.objects.filter(
+                Q(title__icontains=query) | Q(content__icontains=query)
+            )
             
             # Use the question-answering pipeline from Hugging Face
             qa_pipeline = pipeline("question-answering", model="distilbert-base-uncased-distilled-squad")
-            results = []
+            refined_results = []
             for article in articles:
                 result = qa_pipeline(question=query, context=article.content)
                 if result['score'] > 0.2:  # Filter based on relevance score
-                    results.append((article, result['answer'], result['score']))
+                    refined_results.append((article, result['answer'], result['score']))
 
             # Sort results by relevance score
-            results = sorted(results, key=lambda x: x[2], reverse=True)
+            refined_results = sorted(refined_results, key=lambda x: x[2], reverse=True)
+            results = refined_results
     else:
         form = SearchForm()
     
     return render(request, 'main/search_results.html', {'form': form, 'query': query, 'results': results})
+
 
 
 def article_list(request):
@@ -60,10 +62,10 @@ def article_list(request):
 
 def add_article(request):
     if request.method == 'POST':
-        form = SearchForm(request.POST)
+        form = ArticleForm(request.POST)
         if form.is_valid():
             article = form.save()
-            if request.is_ajax():
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
                 return JsonResponse({
                     'success': True,
                     'article': {
@@ -75,7 +77,7 @@ def add_article(request):
                 })
             return redirect('article_list')
         else:
-            if request.is_ajax():
+            if request.headers.get('x-requested-with') == 'XMLHttpRequest':
                 return JsonResponse({'success': False, 'errors': form.errors})
     else:
         form = SearchForm()
@@ -87,7 +89,7 @@ def delete_article(request, pk):
     article.delete()
     return redirect('article_list')
 def change_language(request, language):
-    if language in ['en', 'fr','es']:
+    if language in ['en', 'fr','es','de']:
         translation.activate(language)
         response = redirect(request.META.get('HTTP_REFERER', '/'))
         response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)
