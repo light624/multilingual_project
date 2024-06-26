@@ -5,3 +5,7 @@ python-dotenv
 requests
 openai
 django-haystack==3.1.1
+nltk
+transformers
+scikit-learn
+numpy
